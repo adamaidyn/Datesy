@@ -17,13 +17,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let winScene = (scene as? UIWindowScene) else { return }
         
         let navController = UINavigationController(rootViewController: WelcomeScreenVC())
-        navController.navigationBar.prefersLargeTitles = true
+
         UINavigationBar.appearance().tintColor = .white
         
         window = UIWindow(windowScene: winScene)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
-        
         
     }
 

@@ -10,10 +10,9 @@ import UIKit
 class CategoryCell: UITableViewCell {
     
     let backView: UIView = {
-        let whitePastelColor = UIColor(red: 0.96, green: 0.98, blue: 0.98, alpha: 1.00)
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = whitePastelColor
+        view.backgroundColor = K.Colours.whitePastelColor
         view.clipsToBounds = true
         view.layer.cornerRadius = 30
         return view
@@ -22,19 +21,16 @@ class CategoryCell: UITableViewCell {
     let goImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: K.assetsNames.goButton)
+        imageView.image = UIImage(named: K.AssetsNames.goButton)
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
     let titleLabel: UILabel = {
-        let pinkColor = UIColor(red: 0.97, green: 0.46, blue: 0.67, alpha: 1.00)
-        let whitePastelColor = UIColor(red: 0.96, green: 0.98, blue: 0.98, alpha: 1.00)
-        
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: K.assetsNames.visbyRound, size: 25)
-        label.textColor = pinkColor
+        label.font = UIFont(name: K.AssetsNames.visbyRound, size: 25)
+        label.textColor = K.Colours.pinkColor
         label.numberOfLines = 0
         return label
     }()

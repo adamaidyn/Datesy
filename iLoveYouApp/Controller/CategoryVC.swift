@@ -8,10 +8,16 @@
 import UIKit
 
 class CategoryVC: UIViewController {
-
-    var basicUIElements = BasicUIElements()
     
-    let tableView = BasicUIElements().categoryTableView
+    private var uiElements = UIElements()
+    
+    private let tableView = UIElements().categoryTableView
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,37 +31,13 @@ class CategoryVC: UIViewController {
         
         navigationItem.title = K.categoryScreenTitle
         
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: K.Colours.whitePastelColor]
         
         addConstraints()
     }
 }
-extension CategoryVC {
-    func addConstraints() {
-        
-        view.addSubview(basicUIElements.backgroundImageview)
-        view.addSubview(tableView)
-        
-        var constraints = [NSLayoutConstraint]()
-        
-        let layout = view.layoutMarginsGuide
-        
-        // Background image:
-        constraints.append(basicUIElements.backgroundImageview.leadingAnchor.constraint(equalTo: view.leadingAnchor))
-        constraints.append(basicUIElements.backgroundImageview.trailingAnchor.constraint(equalTo: view.trailingAnchor))
-        constraints.append(basicUIElements.backgroundImageview.topAnchor.constraint(equalTo: view.topAnchor))
-        constraints.append(basicUIElements.backgroundImageview.bottomAnchor.constraint(equalTo: view.bottomAnchor))
-        
-        // tableView
-        constraints.append(tableView.leadingAnchor.constraint(equalTo: layout.leadingAnchor))
-        constraints.append(tableView.trailingAnchor.constraint(equalTo: layout.trailingAnchor))
-        constraints.append(tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150))
-        constraints.append(tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor))
 
-        
-        NSLayoutConstraint.activate(constraints)
-    }
-}
+// MARK: - TableView Delegate
 extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -79,4 +61,49 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
         cell.contentView.layer.masksToBounds = true
         cell.backgroundColor = .clear
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let rootVC = GameplayVC()
+        
+        let navVC = UINavigationController(rootViewController: rootVC)
+        navVC.modalPresentationStyle = .fullScreen
+
+        rootVC.hidesBottomBarWhenPushed = true
+        rootVC.modalPresentationCapturesStatusBarAppearance = true
+        rootVC.currentCategory = K.categories[indexPath.row]
+        
+        present(navVC, animated: true)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
+
+// MARK: - Constraints
+extension CategoryVC {
+    private func addConstraints() {
+        
+        view.addSubview(uiElements.backgroundImageview)
+        view.addSubview(tableView)
+        
+        var constraints = [NSLayoutConstraint]()
+        
+        let layout = view.layoutMarginsGuide
+        
+        // Background image:
+        constraints.append(uiElements.backgroundImageview.leadingAnchor.constraint(equalTo: view.leadingAnchor))
+        constraints.append(uiElements.backgroundImageview.trailingAnchor.constraint(equalTo: view.trailingAnchor))
+        constraints.append(uiElements.backgroundImageview.topAnchor.constraint(equalTo: view.topAnchor))
+        constraints.append(uiElements.backgroundImageview.bottomAnchor.constraint(equalTo: view.bottomAnchor))
+        
+        // tableView
+        constraints.append(tableView.leadingAnchor.constraint(equalTo: layout.leadingAnchor))
+        constraints.append(tableView.trailingAnchor.constraint(equalTo: layout.trailingAnchor))
+        constraints.append(tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150))
+        constraints.append(tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor))
+        
+        NSLayoutConstraint.activate(constraints)
+    }
+}
+
+
