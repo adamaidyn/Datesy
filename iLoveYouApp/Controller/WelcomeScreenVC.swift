@@ -11,7 +11,6 @@ class WelcomeScreenVC: UIViewController {
     
     
     // MARK: - Objects and properties
-    
     private var uiElements = UIElements()
     
     // MARK: - Life Cycle

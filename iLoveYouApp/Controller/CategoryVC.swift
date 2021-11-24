@@ -9,9 +9,7 @@ import UIKit
 
 class CategoryVC: UIViewController {
     
-    
     // MARK: - Objects and properties
-    
     private var uiElements = UIElements()
     
     private let tableView = UIElements().categoryTableView

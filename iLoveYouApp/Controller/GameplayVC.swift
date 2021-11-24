@@ -11,7 +11,6 @@ class GameplayVC: UIViewController {
     
     
     // MARK: - Objectas and properties
-    
     private var uiElements = UIElements()
     
     private var questions = Questions()
