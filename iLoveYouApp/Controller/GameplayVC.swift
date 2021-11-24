@@ -9,23 +9,28 @@ import UIKit
 
 class GameplayVC: UIViewController {
     
+    
+    // MARK: - Objectas and properties
+    
     private var uiElements = UIElements()
     
     private var questions = Questions()
     
-    private let config = UIImage.SymbolConfiguration(pointSize: 30, weight: .light, scale: .default)
-    
     var currentCategory: String = ""
-    
-    var categoryNumber: Int?
     
     // MARK: - Life cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         configureNavBar()
+        configureBarButtons()
         
     }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,13 +40,9 @@ class GameplayVC: UIViewController {
         
         pullUpQuestions()
         
-        //        print(questions.funny.count)
-        //        print(questions.warmUp.count)
-        //        print(questions.sexyDirty.count)
+        configureQuestionText()
         
-        configureBarButtons()
     }
-    
     
     // MARK: - Bar Buttons
     @objc private func shareButtonPressed() {
@@ -52,35 +53,32 @@ class GameplayVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    
     // MARK: - Buttons
     @objc private func nextButtonPressed() {
         
         pullUpQuestions()
     }
     
-    // MARK: - Data manipulation methods
+    // MARK: - Display info methods
     func pullUpQuestions() {
         let randomCategories = questions.funny + questions.sexyDirty + questions.warmUp
         
-        switch currentCategory {
-        case "Warm up":
-            uiElements.questionText.text = questions.warmUp.randomElement()
-        case "Funny":
-            uiElements.questionText.text = questions.funny.randomElement()
-        case "Sexy & dirty":
-            uiElements.questionText.text = questions.sexyDirty.randomElement()
-        case "Random":
-            uiElements.questionText.text = randomCategories.randomElement()
-        default:
-            uiElements.questionText.text = "Error occured while fetching the question"
+        if currentCategory == questions.categories[0] {
+            showRandomQuestion(questions: questions.warmUp)
+        } else if currentCategory == questions.categories[1] {
+            showRandomQuestion(questions: questions.funny)
+        } else if currentCategory == questions.categories[2] {
+            showRandomQuestion(questions: questions.sexyDirty)
+        } else if currentCategory == questions.categories[3] {
+            showRandomQuestion(questions: randomCategories)
+        } else {
+            uiElements.questionText.text = K.gameplayErrorMessage
         }
     }
 }
+// MARK: - Extensions
 
-
-
-// MARK: - Constraints
+//Constraints
 extension GameplayVC {
     private func setConstraints() {
         view.addSubview(uiElements.backgroundImageview)
@@ -121,11 +119,14 @@ extension GameplayVC {
         
         NSLayoutConstraint.activate(constraints)
     }
-}
+    
 
-// MARK: - Configuration methods
+}
+// MARK: - UI Configurations
 extension GameplayVC {
-    func configureBarButtons() {
+    private func configureBarButtons() {
+        let config = UIImage.SymbolConfiguration(pointSize: 30, weight: .light, scale: .default)
+        
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: K.SymbolNames.xmarkCircle, withConfiguration: config),
             style: .done,
@@ -139,21 +140,56 @@ extension GameplayVC {
             action: #selector(shareButtonPressed)
         )
     }
-    func configureNavBar() {
+    private func configureNavBar() {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.prefersLargeTitles = false
     }
-}
-extension Int {
-    static func randomizer(in range: ClosedRange<Int>, excluding x: Int) -> Int {
-        if range.contains(x) {
-            let r = Int.random(in: Range(uncheckedBounds: (range.lowerBound, range.upperBound)))
-            return r == x ? range.upperBound : r
-        } else {
-            return Int.random(in: range)
+    
+    private func configureQuestionText() {
+        let deviceType = UIDevice.current.deviceType
+
+        switch deviceType {
+        
+        case .iPhone4_4S:
+            uiElements.questionText.font = UIFont(name: K.AssetsNames.visbyRound, size: UIScreen.main.bounds.height / 28)
+
+        case .iPhones_5_5s_5c_SE:
+            uiElements.questionText.font = UIFont(name: K.AssetsNames.visbyRound, size: UIScreen.main.bounds.height / 28)
+
+        case .iPhones_6_6s_7_8:
+            uiElements.questionText.font = UIFont(name: K.AssetsNames.visbyRound, size: UIScreen.main.bounds.height / 28)
+
+        case .iPhones_6Plus_6sPlus_7Plus_8Plus:
+            uiElements.questionText.font = UIFont(name: K.AssetsNames.visbyRound, size: 28)
+
+        case .iPhoneX:
+            uiElements.questionText.font = UIFont(name: K.AssetsNames.visbyRound, size: 28)
+
+        default:
+            uiElements.questionText.font = UIFont(name: K.AssetsNames.visbyRound, size: 28)
         }
     }
 }
-
+// MARK: - Display random text method
+extension GameplayVC {
+    private func showRandomQuestion(questions: [String]) {
+        if questions.count > 0 {
+    
+            var quest = questions
+    
+            // random key from array
+            let arrayKey = Int(arc4random_uniform(UInt32(quest.count)))
+    
+            // your random number
+            let randQuestion = quest[arrayKey]
+    
+            // make sure the number isnt repeated
+            quest.swapAt(arrayKey, quest.count-1)
+            quest.removeLast()
+    
+            uiElements.questionText.text = randQuestion
+        }
+    }
+}

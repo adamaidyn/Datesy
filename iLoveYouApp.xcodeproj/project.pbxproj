@@ -20,6 +20,7 @@
 		B8B76891271D4B1100610668 /* UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B76890271D4B1100610668 /* UIElements.swift */; };
 		B8C4B6DE271FFFF800515F32 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4B6DD271FFFF800515F32 /* CategoryVC.swift */; };
 		B8C4B6E12720378800515F32 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4B6E02720378800515F32 /* CategoryCell.swift */; };
+		B8DE3F7727435BBD006F44F9 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DE3F7627435BBD006F44F9 /* SettingsVC.swift */; };
 		B8EBD4D2271FE81800CABC5C /* CommentedOutCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EBD4D1271FE81800CABC5C /* CommentedOutCode.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		B8B76890271D4B1100610668 /* UIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
 		B8C4B6DD271FFFF800515F32 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 		B8C4B6E02720378800515F32 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		B8DE3F7627435BBD006F44F9 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		B8EBD4D1271FE81800CABC5C /* CommentedOutCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentedOutCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,7 +93,6 @@
 				B8B76876271D3F7100610668 /* AppDelegate.swift */,
 				B8B76878271D3F7100610668 /* SceneDelegate.swift */,
 				B8B7688D271D4AAE00610668 /* Model */,
-				B8C4B6DF2720000600515F32 /* UI */,
 				B8B7688F271D4ABB00610668 /* View */,
 				B8B7688E271D4AB200610668 /* Controller */,
 				B8B76882271D3F7300610668 /* Assets.xcassets */,
@@ -117,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				B8B7687A271D3F7100610668 /* WelcomeScreenVC.swift */,
+				B8DE3F7627435BBD006F44F9 /* SettingsVC.swift */,
 				B8C4B6DD271FFFF800515F32 /* CategoryVC.swift */,
 				B8185F392727EDC300DA627E /* GameplayVC.swift */,
 			);
@@ -126,6 +128,7 @@
 		B8B7688F271D4ABB00610668 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B8C4B6DF2720000600515F32 /* UI */,
 				B8C4B6E02720378800515F32 /* CategoryCell.swift */,
 			);
 			path = View;
@@ -214,6 +217,7 @@
 				B880F06C272D24C400F035A3 /* QuestionsData.swift in Sources */,
 				B8185F3A2727EDC300DA627E /* GameplayVC.swift in Sources */,
 				B8B76881271D3F7100610668 /* iLoveYouApp.xcdatamodeld in Sources */,
+				B8DE3F7727435BBD006F44F9 /* SettingsVC.swift in Sources */,
 				B8C4B6E12720378800515F32 /* CategoryCell.swift in Sources */,
 				B8B76877271D3F7100610668 /* AppDelegate.swift in Sources */,
 				B8C4B6DE271FFFF800515F32 /* CategoryVC.swift in Sources */,

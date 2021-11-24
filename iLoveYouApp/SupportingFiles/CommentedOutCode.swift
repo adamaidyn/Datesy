@@ -137,3 +137,75 @@
 //            uiElements.questionText.text = "Error occured while fetching the question"
 //        }
         
+
+
+//switch currentCategory {
+//case "Warm up":
+//    uiElements.questionText.text = questions.warmUp.randomElement()
+//case "Funny":
+//    uiElements.questionText.text = questions.funny.randomElement()
+//case "Sexy & dirty":
+//    uiElements.questionText.text = questions.sexyDirty.randomElement()
+//case "Random":
+//    uiElements.questionText.text = randomCategories.randomElement()
+//default:
+//    uiElements.questionText.text = "Error occured while fetching the question"
+//}
+
+
+//func randomizer(questions: [String]) {
+//    while questions.count > 0 {
+//        
+//        var quest = questions
+//        
+//        // random key from array
+//        let arrayKey = Int(arc4random_uniform(UInt32(quest.count)))
+//        
+//        // your random number
+//        let randNum = questions[arrayKey]
+//        
+//        // make sure the number isnt repeated
+//        quest.swapAt(arrayKey, quest.count-1)
+//        quest.removeLast()
+//        
+//        
+//        uiElements.questionText.text = randNum
+//    }
+//}
+
+
+//let exitButton: UIButton = {
+//    let button = UIButton()
+//    button.translatesAutoresizingMaskIntoConstraints = false
+//    button.setImage(UIImage(named: K.AssetsNames.exitButton), for: .normal)
+//    return button
+//}()
+
+//let shareButton: UIButton = {
+//    let largeConfig = UIImage.SymbolConfiguration(pointSize: UIScreen.main.bounds.height / 19, weight: .bold, scale: .large)
+//    let largeBoldDoc = UIImage(systemName: K.SymbolNames.shareSymbol, withConfiguration: largeConfig)
+//
+//    let button = UIButton()
+//    button.translatesAutoresizingMaskIntoConstraints = false
+//    button.setImage(largeBoldDoc, for: .normal)
+//    button.tintColor = K.Colours.whitePastelColor
+//    return button
+//}()
+
+//        print(UIScreen.main.bounds.height / 33.7)
+//        print(UIScreen.main.bounds.height / 48)
+
+//navigationController?.navigationItem.leftBarButtonItem = UIBarButtonItem(
+//    title: "Close",
+//    style: .done,
+//    target: self,
+//    action: #selector(dismissSelf))
+
+//struct deviceTypeProperties {
+//    static let iphone3_5 = "iPhone 4 or iPhone 4S"
+//    static let iphone4_0 = "iPhone 5, iPhone 5s, iPhone 5c or iPhone SE"
+//    static let iphone4_7 = "iPhone 6, iPhone 6S, iPhone 7 or iPhone 8"
+//    static let iphone5_5 = "iPhone 6 Plus, iPhone 6S Plus, iPhone 7 Plus or iPhone 8 Plus"
+//    static let iphone5_8 = "iPhone X"
+//    static let unknownIphoneOrIpad = "iPadOrUnknown"
+//}

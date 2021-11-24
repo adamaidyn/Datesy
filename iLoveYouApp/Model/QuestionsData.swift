@@ -10,6 +10,9 @@ import Foundation
 struct Questions {
     
     // MARK: - Questions by category
+    
+    let categories = ["Warm up", "Funny", "Sexy & dirty", "Random"]
+    
     let funny = ["The zombie apocalypse is coming, who are 3 people you want on your team?",
                  "Who was your childhood crush?",
                  "You have your own late night talk show, who do you invite as your first guest?",
@@ -56,6 +59,8 @@ struct Questions {
                  "What part of a kid’s movie completely scarred you?",
                  "Under the sheets, are you Iron Man, The Hulk, Thor, or Captain America?"
     ]
+    
+    
     
     let warmUp = ["Who was your childhood famous crush?",
                   "Would you rather be reincarnated as a cat or a dog?",
@@ -104,6 +109,8 @@ struct Questions {
                   "Multiple choice or essay"
     ]
     
+//    let warmUp = ["Naruto", "Sasuke", "Kakashi", "Obito", "Madara"]
+    
     let sexyDirty = ["What is the most reliable way for you to orgasm with a partner?",
                      "Would it turn you on to watch porn together?",
                      "What’s the sexual act you’ve never done, but want to try?",
@@ -150,7 +157,4 @@ struct Questions {
                      "What should a partner do to impress you in bed?",
                      "What’s the first thing you noticed about my features?"
     ]
-    
-    
-    
 }

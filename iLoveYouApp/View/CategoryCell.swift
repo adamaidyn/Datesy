@@ -9,20 +9,21 @@ import UIKit
 
 class CategoryCell: UITableViewCell {
     
-    let backView: UIView = {
+    // MARK: - Cell UI elements
+    private let backView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = K.Colours.whitePastelColor
         view.clipsToBounds = true
-        view.layer.cornerRadius = 30
+        view.layer.cornerRadius = 22
         return view
     }()
     
-    let goImage: UIImageView = {
+    private let goImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: K.AssetsNames.goButton)
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         return imageView
     }()
     
@@ -45,9 +46,12 @@ class CategoryCell: UITableViewCell {
         return label
     }()
     
+    
+    // MARK: - Cell life cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setConstraints()
+        configureDiscriptionLabel()
     }
     
     required init?(coder: NSCoder) {
@@ -59,6 +63,7 @@ class CategoryCell: UITableViewCell {
         
     }
     
+    // MARK: - Constraints
     func setConstraints() {
         addSubview(backView)
         addSubview(titleLabel)
@@ -67,25 +72,59 @@ class CategoryCell: UITableViewCell {
         
         var constraints = [NSLayoutConstraint]()
         
+        let layout = layoutMarginsGuide
+        
+        let backViewLayout = backView.layoutMarginsGuide
+        
         // Background view
-        constraints.append(backView.leadingAnchor.constraint(equalTo: leadingAnchor))
-        constraints.append(backView.trailingAnchor.constraint(equalTo: trailingAnchor))
+        constraints.append(backView.leadingAnchor.constraint(equalTo: layout.leadingAnchor))
+        constraints.append(backView.trailingAnchor.constraint(equalTo: layout.trailingAnchor))
         constraints.append(backView.topAnchor.constraint(equalTo: topAnchor, constant: 5))
         constraints.append(backView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5))
         
         // Title:
-        constraints.append(titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10))
-        constraints.append(titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16))
+        constraints.append(titleLabel.leadingAnchor.constraint(equalTo: backViewLayout.leadingAnchor, constant: 5))
+        constraints.append(titleLabel.topAnchor.constraint(equalTo: backViewLayout.topAnchor))
         
         // Description
-        constraints.append(descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16))
-        constraints.append(descriptionLabel.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 35))
+        constraints.append(descriptionLabel.leadingAnchor.constraint(equalTo: backViewLayout.leadingAnchor, constant: 5))
         constraints.append(descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100))
+        constraints.append(descriptionLabel.topAnchor.constraint(equalTo: backViewLayout.topAnchor, constant: 35))
         
         // "GO" Image
+        constraints.append(goImage.trailingAnchor.constraint(equalTo: layout.trailingAnchor, constant: -5))
         constraints.append(goImage.centerYAnchor.constraint(equalTo: centerYAnchor))
-        constraints.append(goImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16))
         
         NSLayoutConstraint.activate(constraints)
     }
+    
+    // MARK: - Elements config
+    
+    func configureDiscriptionLabel() {
+        let deviceType = UIDevice.current.deviceType
+        
+        switch deviceType {
+        
+        case .iPhone4_4S:
+            descriptionLabel.font = UIFont.systemFont(ofSize: 12)
+            
+        case .iPhones_5_5s_5c_SE:
+            descriptionLabel.font = UIFont.systemFont(ofSize: 14)
+            
+        case .iPhones_6_6s_7_8:
+            descriptionLabel.font = UIFont.systemFont(ofSize: 17)
+            
+        case .iPhones_6Plus_6sPlus_7Plus_8Plus:
+            descriptionLabel.font = UIFont.systemFont(ofSize: 17)
+            
+        case .iPhoneX:
+            descriptionLabel.font = UIFont.systemFont(ofSize: 17)
+            
+        default:
+            descriptionLabel.font = UIFont.systemFont(ofSize: 17)
+        }
+    }
 }
+
+
+

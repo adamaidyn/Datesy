@@ -9,8 +9,12 @@ import UIKit
 
 class WelcomeScreenVC: UIViewController {
     
+    
+    // MARK: - Objects and properties
+    
     private var uiElements = UIElements()
     
+    // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         configureNavBar()
     }
@@ -20,19 +24,29 @@ class WelcomeScreenVC: UIViewController {
         addConstraints()
         
         uiElements.playButton.addTarget(self, action: #selector(playButtonPressed), for: .touchUpInside)
-        
+        uiElements.editButton.addTarget(self, action: #selector(settingButtonPressed), for: .touchUpInside)
     }
+    
+    // MARK: - Button method
     @objc func playButtonPressed() {
         
         let vc = CategoryVC()
         navigationController?.pushViewController(vc, animated: true)
     }
+    @objc func settingButtonPressed() {
+        
+        let rootVC = SettingsVC()
+        let navVC = UINavigationController(rootViewController: rootVC)
+        navVC.modalPresentationStyle = .automatic
+        present(navVC, animated: true)
+    }
 }
+// MARK: - Constraints
 extension WelcomeScreenVC {
     func addConstraints() {
         view.addSubview(uiElements.backgroundImageview)
         view.addSubview(uiElements.playButton)
-        view.addSubview(uiElements.settingsButton)
+        view.addSubview(uiElements.editButton)
         view.addSubview(uiElements.logoImage)
 
         var constraints = [NSLayoutConstraint]()
@@ -50,8 +64,8 @@ extension WelcomeScreenVC {
         constraints.append(uiElements.playButton.bottomAnchor.constraint(equalTo: layout.bottomAnchor))
         
         // Settings Button:
-        constraints.append(uiElements.settingsButton.topAnchor.constraint(equalTo: layout.topAnchor))
-        constraints.append(uiElements.settingsButton.leadingAnchor.constraint(equalTo: layout.leadingAnchor))
+        constraints.append(uiElements.editButton.topAnchor.constraint(equalTo: layout.topAnchor))
+        constraints.append(uiElements.editButton.leadingAnchor.constraint(equalTo: layout.leadingAnchor))
   
         // Logo image:
         constraints.append(uiElements.logoImage.centerYAnchor.constraint(equalTo: view.centerYAnchor))
@@ -60,6 +74,8 @@ extension WelcomeScreenVC {
         NSLayoutConstraint.activate(constraints)
     }
 }
+
+// MARK: - UI Configuration
 extension WelcomeScreenVC {
     func configureNavBar() {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
