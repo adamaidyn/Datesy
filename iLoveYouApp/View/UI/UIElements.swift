@@ -13,15 +13,18 @@ struct UIElements {
     let backgroundImageview: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: K.AssetsNames.pinkBackground)
+//        imageView.image = UIImage(named: K.AssetsNames.pinkBackground)
+        imageView.image = UIImage(named: "PurpleBackground")
         imageView.contentMode = .scaleAspectFill
+        imageView.accessibilityLabel = "App logo"
         return imageView
     }()
     
     let playButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: K.AssetsNames.playButton), for: .normal)
+        button.setImage(UIImage(named: K.AssetsNames.playButtonPurple), for: .normal)
+        button.accessibilityLabel = "Play"
         return button
     }()
     
@@ -48,10 +51,23 @@ struct UIElements {
     
     let logoImage: UIImageView = {
         let imageView = UIImageView()
+        
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: K.AssetsNames.appLogo)
         imageView.contentMode = .scaleAspectFill
+        
         return imageView
+    }()
+    
+    let welcomeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.text = "The best questions to fall in love"
+        label.font = UIFont.boldSystemFont(ofSize: 35)
+        label.numberOfLines = 0
+        label.textColor = K.Colours.whitePastelColor
+        return label
     }()
     
     
@@ -77,27 +93,38 @@ struct UIElements {
     }()
             
     let nextButton: UIButton = {
+        
         let largeConfig = UIImage.SymbolConfiguration(pointSize: UIScreen.main.bounds.height / 13, weight: .bold, scale: .large)
-        let largeBoldDoc = UIImage(systemName: K.SymbolNames.nextSymbol, withConfiguration: largeConfig)
+        
+        let justConfig = UIImage.SymbolConfiguration(pointSize: UIScreen.main.bounds.height / 13, weight: .bold, scale: .large)
+        
+        let largeBoldDoc = UIImage(systemName: K.SymbolNames.nextSymbol, withConfiguration: justConfig)
         
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(largeBoldDoc, for: .normal)
-        button.tintColor = K.Colours.pinkColor
-        button.backgroundColor = K.Colours.whitePastelColor
-        button.layer.cornerRadius = UIScreen.main.bounds.height / 18
+        button.tintColor = .white
+        
+//        button.backgroundColor = K.Colours.pureBlack
+        button.layer.cornerRadius = UIScreen.main.bounds.height / 16.5
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         button.layer.shadowOpacity = 0.5
         button.layer.shadowRadius = 5
+        button.accessibilityLabel = "Next question"
+        
+        if #available(iOS 13, *) {
+            button.setImage(UIImage(systemName: "arrow.right.circle", withConfiguration: justConfig), for: .normal)
+        }
+        
         return button
     }()
     
-    let questionText: UILabel = {
+    var questionText: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.font = UIFont(name: K.AssetsNames.visbyRound, size: 28)
+        label.font = UIFont(name: K.AssetsNames.varelaRound, size: 28)
         label.textColor = K.Colours.pureBlack
         label.numberOfLines = 0
         return label
@@ -116,6 +143,35 @@ struct UIElements {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    
+    // MARK: - Tutorial Screen UI
+    
+    let illustImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    let tutorialLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: UIScreen.main.bounds.height / 28.13333333333333, weight: .light)
+        label.textColor = K.Colours.pureBlack
+        return label
+    }()
+    
+    let skipDoneButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.accessibilityLabel = "Skip"
+        button.setTitleColor(.systemGray, for: .normal)
+        button.setTitleColor(.black, for: .highlighted)
+        return button
     }()
 }
 // MARK: - extensions
@@ -145,5 +201,14 @@ extension UIDevice {
         default:
             return .unknown
         }
+    }
+}
+extension UIImage {
+    func image(alpha: CGFloat) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        draw(at: .zero, blendMode: .normal, alpha: alpha)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
     }
 }

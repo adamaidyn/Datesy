@@ -3,14 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		B8185F3A2727EDC300DA627E /* GameplayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8185F392727EDC300DA627E /* GameplayVC.swift */; };
 		B85830A427251F5A00D94BDE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85830A327251F5A00D94BDE /* Constants.swift */; };
+		B8683C9327A3E11600445D03 /* Tutorial2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8683C9227A3E11600445D03 /* Tutorial2VC.swift */; };
 		B880F06C272D24C400F035A3 /* QuestionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B880F06B272D24C400F035A3 /* QuestionsData.swift */; };
-		B8A09A5E271FF0660050C69F /* VisbyRoundCF-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B8A09A5D271FF0660050C69F /* VisbyRoundCF-Bold.otf */; };
+		B881A42C27B104B10015E853 /* Pods_iLoveYouApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C00D25113D4B9201EEA7A6 /* Pods_iLoveYouApp.framework */; };
+		B88AF04027B630900050A303 /* FredokaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B88AF03D27B62F600050A303 /* FredokaOne-Regular.ttf */; };
 		B8B76877271D3F7100610668 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B76876271D3F7100610668 /* AppDelegate.swift */; };
 		B8B76879271D3F7100610668 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B76878271D3F7100610668 /* SceneDelegate.swift */; };
 		B8B7687B271D3F7100610668 /* WelcomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B7687A271D3F7100610668 /* WelcomeScreenVC.swift */; };
@@ -20,15 +22,20 @@
 		B8B76891271D4B1100610668 /* UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B76890271D4B1100610668 /* UIElements.swift */; };
 		B8C4B6DE271FFFF800515F32 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4B6DD271FFFF800515F32 /* CategoryVC.swift */; };
 		B8C4B6E12720378800515F32 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4B6E02720378800515F32 /* CategoryCell.swift */; };
+		B8D1EEAA2750A39700A60CF8 /* FillingHeartPink.json in Resources */ = {isa = PBXBuildFile; fileRef = B8D1EEA92750A39700A60CF8 /* FillingHeartPink.json */; };
+		B8D1EEAC2750A6E000A60CF8 /* LatestHeartLoading.json in Resources */ = {isa = PBXBuildFile; fileRef = B8D1EEAB2750A6E000A60CF8 /* LatestHeartLoading.json */; };
 		B8DE3F7727435BBD006F44F9 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DE3F7627435BBD006F44F9 /* SettingsVC.swift */; };
 		B8EBD4D2271FE81800CABC5C /* CommentedOutCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EBD4D1271FE81800CABC5C /* CommentedOutCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B4643DD225C059AD419845C /* Pods-iLoveYouApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLoveYouApp.release.xcconfig"; path = "Target Support Files/Pods-iLoveYouApp/Pods-iLoveYouApp.release.xcconfig"; sourceTree = "<group>"; };
+		8C67DD194D704751D1204E6F /* Pods-iLoveYouApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLoveYouApp.debug.xcconfig"; path = "Target Support Files/Pods-iLoveYouApp/Pods-iLoveYouApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B8185F392727EDC300DA627E /* GameplayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayVC.swift; sourceTree = "<group>"; };
 		B85830A327251F5A00D94BDE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B8683C9227A3E11600445D03 /* Tutorial2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial2VC.swift; sourceTree = "<group>"; };
 		B880F06B272D24C400F035A3 /* QuestionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsData.swift; sourceTree = "<group>"; };
-		B8A09A5D271FF0660050C69F /* VisbyRoundCF-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-Bold.otf"; sourceTree = "<group>"; };
+		B88AF03D27B62F600050A303 /* FredokaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FredokaOne-Regular.ttf"; sourceTree = "<group>"; };
 		B8B76873271D3F7100610668 /* iLoveYouApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iLoveYouApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B76876271D3F7100610668 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8B76878271D3F7100610668 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,8 +47,11 @@
 		B8B76890271D4B1100610668 /* UIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
 		B8C4B6DD271FFFF800515F32 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 		B8C4B6E02720378800515F32 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		B8D1EEA92750A39700A60CF8 /* FillingHeartPink.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FillingHeartPink.json; sourceTree = "<group>"; };
+		B8D1EEAB2750A6E000A60CF8 /* LatestHeartLoading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LatestHeartLoading.json; sourceTree = "<group>"; };
 		B8DE3F7627435BBD006F44F9 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		B8EBD4D1271FE81800CABC5C /* CommentedOutCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentedOutCode.swift; sourceTree = "<group>"; };
+		E0C00D25113D4B9201EEA7A6 /* Pods_iLoveYouApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iLoveYouApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,15 +59,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B881A42C27B104B10015E853 /* Pods_iLoveYouApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		228E3C737CE4F2C09ACFF58F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0C00D25113D4B9201EEA7A6 /* Pods_iLoveYouApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ABA3BCF2AD130E872E2938B7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8C67DD194D704751D1204E6F /* Pods-iLoveYouApp.debug.xcconfig */,
+				2B4643DD225C059AD419845C /* Pods-iLoveYouApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B80698A4272FE5EC00F34D3F /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				B8DE3F7627435BBD006F44F9 /* SettingsVC.swift */,
+				B8B7687A271D3F7100610668 /* WelcomeScreenVC.swift */,
 				B8EBD4D1271FE81800CABC5C /* CommentedOutCode.swift */,
 			);
 			path = SupportingFiles;
@@ -66,7 +96,7 @@
 		B8A09A5C271FF0390050C69F /* Fons */ = {
 			isa = PBXGroup;
 			children = (
-				B8A09A5D271FF0660050C69F /* VisbyRoundCF-Bold.otf */,
+				B88AF03D27B62F600050A303 /* FredokaOne-Regular.ttf */,
 			);
 			path = Fons;
 			sourceTree = "<group>";
@@ -76,6 +106,8 @@
 			children = (
 				B8B76875271D3F7100610668 /* iLoveYouApp */,
 				B8B76874271D3F7100610668 /* Products */,
+				ABA3BCF2AD130E872E2938B7 /* Pods */,
+				228E3C737CE4F2C09ACFF58F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +134,8 @@
 				B80698A4272FE5EC00F34D3F /* SupportingFiles */,
 				B8A09A5C271FF0390050C69F /* Fons */,
 				B85830A327251F5A00D94BDE /* Constants.swift */,
+				B8D1EEA92750A39700A60CF8 /* FillingHeartPink.json */,
+				B8D1EEAB2750A6E000A60CF8 /* LatestHeartLoading.json */,
 			);
 			path = iLoveYouApp;
 			sourceTree = "<group>";
@@ -117,8 +151,7 @@
 		B8B7688E271D4AB200610668 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B8B7687A271D3F7100610668 /* WelcomeScreenVC.swift */,
-				B8DE3F7627435BBD006F44F9 /* SettingsVC.swift */,
+				B8683C9227A3E11600445D03 /* Tutorial2VC.swift */,
 				B8C4B6DD271FFFF800515F32 /* CategoryVC.swift */,
 				B8185F392727EDC300DA627E /* GameplayVC.swift */,
 			);
@@ -128,8 +161,8 @@
 		B8B7688F271D4ABB00610668 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B8C4B6DF2720000600515F32 /* UI */,
 				B8C4B6E02720378800515F32 /* CategoryCell.swift */,
+				B8C4B6DF2720000600515F32 /* UI */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -149,9 +182,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8B7688A271D3F7300610668 /* Build configuration list for PBXNativeTarget "iLoveYouApp" */;
 			buildPhases = (
+				8D6C80FE60EEC99F298DE9ED /* [CP] Check Pods Manifest.lock */,
 				B8B7686F271D3F7100610668 /* Sources */,
 				B8B76870271D3F7100610668 /* Frameworks */,
 				B8B76871271D3F7100610668 /* Resources */,
+				6343B6989674444BAC6D718E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,7 +204,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					B8B76872271D3F7100610668 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -199,7 +234,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8A09A5E271FF0660050C69F /* VisbyRoundCF-Bold.otf in Resources */,
+				B8D1EEAA2750A39700A60CF8 /* FillingHeartPink.json in Resources */,
+				B8D1EEAC2750A6E000A60CF8 /* LatestHeartLoading.json in Resources */,
+				B88AF04027B630900050A303 /* FredokaOne-Regular.ttf in Resources */,
 				B8B76886271D3F7300610668 /* LaunchScreen.storyboard in Resources */,
 				B8B76883271D3F7300610668 /* Assets.xcassets in Resources */,
 			);
@@ -207,12 +244,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6343B6989674444BAC6D718E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iLoveYouApp/Pods-iLoveYouApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iLoveYouApp/Pods-iLoveYouApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iLoveYouApp/Pods-iLoveYouApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D6C80FE60EEC99F298DE9ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iLoveYouApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B8B7686F271D3F7100610668 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B8EBD4D2271FE81800CABC5C /* CommentedOutCode.swift in Sources */,
+				B8683C9327A3E11600445D03 /* Tutorial2VC.swift in Sources */,
 				B8B7687B271D3F7100610668 /* WelcomeScreenVC.swift in Sources */,
 				B880F06C272D24C400F035A3 /* QuestionsData.swift in Sources */,
 				B8185F3A2727EDC300DA627E /* GameplayVC.swift in Sources */,
@@ -292,7 +372,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -347,7 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -359,39 +439,45 @@
 		};
 		B8B7688B271D3F7300610668 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C67DD194D704751D1204E6F /* Pods-iLoveYouApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 86FSX2686C;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = 7XHG5AZRA6;
 				INFOPLIST_FILE = iLoveYouApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.915apps.iLoveYouApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cherrydevs.DatingQuestionsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		B8B7688C271D3F7300610668 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B4643DD225C059AD419845C /* Pods-iLoveYouApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 86FSX2686C;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = 7XHG5AZRA6;
 				INFOPLIST_FILE = iLoveYouApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.915apps.iLoveYouApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cherrydevs.DatingQuestionsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

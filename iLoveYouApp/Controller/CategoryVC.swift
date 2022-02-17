@@ -16,10 +16,12 @@ class CategoryVC: UIViewController {
     
     private let questions = Questions()
     
-    // MARK: - Life cycle 
+    private let generator = UIImpactFeedbackGenerator(style: .medium)
+    private let generators = UINotificationFeedbackGenerator()
+    
+    // MARK: - Life cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
@@ -35,6 +37,50 @@ class CategoryVC: UIViewController {
         
         configureNavItems()
         addConstraints()
+        
+        if isCurrentUser() == false {
+            generators.notificationOccurred(.warning)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                UserDefaults.standard.set(true, forKey: K.userDefaultsKeys.newUserID)
+                
+                self.presentTutorialVC()
+            }
+        }
+    }
+    
+    @objc func tutorialScreen() {
+        presentTutorialVC()
+    }
+    
+    @objc func settingButtonPressed() {
+        
+        let rootVC = SettingsVC()
+        let navVC = UINavigationController(rootViewController: rootVC)
+        navVC.modalPresentationStyle = .automatic
+        present(navVC, animated: true)
+    }
+    
+    func isCurrentUser() -> Bool {
+        let newUserID = UserDefaults.standard.bool(forKey: K.userDefaultsKeys.newUserID)
+        
+        if newUserID == true {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func presentTutorialVC() {
+        let rootVC = Tutorial2VC(
+            transitionStyle: .scroll,
+            navigationOrientation: .horizontal,
+            options: nil
+        )
+        
+        let navVC = UINavigationController(rootViewController: rootVC)
+        navVC.modalPresentationStyle = .automatic
+        present(navVC, animated: true)
     }
 }
 
@@ -49,7 +95,6 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellName, for: indexPath) as! CategoryCell
         cell.titleLabel.text = questions.categories[indexPath.row]
         cell.descriptionLabel.text = K.descriptions[indexPath.row]
-        
         return cell
     }
     
@@ -65,19 +110,24 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        presentGameplayVC(indexPath: indexPath)
+        
+    }
+    
+    func presentGameplayVC(indexPath: IndexPath) {
         let rootVC = GameplayVC()
         
         let navVC = UINavigationController(rootViewController: rootVC)
         navVC.modalPresentationStyle = .fullScreen
-
+        
         rootVC.hidesBottomBarWhenPushed = true
         rootVC.modalPresentationCapturesStatusBarAppearance = true
         rootVC.currentCategory = questions.categories[indexPath.row]
         
         present(navVC, animated: true)
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-        
     }
 }
 
@@ -110,9 +160,19 @@ extension CategoryVC {
 
 // MARK: - Navigation controller configs
 extension CategoryVC {
-    func configureNavItems() {
+    private func configureNavItems() {
         navigationItem.title = K.categoryScreenTitle
         
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: K.Colours.whitePastelColor]
+        
+        let config = UIImage.SymbolConfiguration(pointSize: 30, weight: .regular, scale: .default)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: K.SymbolNames.infoCircle, withConfiguration: config),
+            style: .done,
+            target: self,
+            action: #selector(tutorialScreen)
+        )
+        
     }
 }

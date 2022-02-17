@@ -1,0 +1,6 @@
+framework module Pods_iLoveYouApp {
+  umbrella header "Pods-iLoveYouApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

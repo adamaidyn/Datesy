@@ -209,3 +209,374 @@
 //    static let iphone5_8 = "iPhone X"
 //    static let unknownIphoneOrIpad = "iPadOrUnknown"
 //}
+
+//categoryCell.backgroundView?.alpha = 0.5
+
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+//            //Bring's sender's opacity back up to fully opaque.
+//            categoryCell.backgroundView?.alpha = 1
+//        }
+
+// Logo image:
+//constraints.append(animationView.centerYAnchor.constraint(equalTo: view.centerYAnchor))
+//constraints.append(animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor))
+//constraints.append(animationView.topAnchor.constraint(equalTo: view.topAnchor, constant: 200))
+//constraints.append(animationView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200))
+
+//func setupAnimation() {
+//    animationView.layer.shadowPath = UIBezierPath(rect: animationView.bounds).cgPath
+//    animationView.layer.shadowColor = UIColor.black.cgColor
+//    animationView.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+//    animationView.layer.shadowOpacity = 0.3
+//    animationView.layer.shadowRadius = 5
+//    
+//    animationView.play()
+//}
+
+//        print(array[counter % array.count])
+        
+        
+//        print(questions.warmUp[counter % questions.warmUp.count])
+
+//    func pullUpQuestions() {
+//        let randomCategories = questions.funny + questions.sexyDirty + questions.warmUp
+//
+//        if currentCategory == questions.categories[0] {
+//            showRandomQuestion(questions: questions.warmUp)
+//        } else if currentCategory == questions.categories[1] {
+//            showRandomQuestion(questions: questions.funny)
+//        } else if currentCategory == questions.categories[2] {
+//            showRandomQuestion(questions: questions.sexyDirty)
+//        } else if currentCategory == questions.categories[3] {
+//            showRandomQuestion(questions: randomCategories)
+//        } else {
+//            uiElements.questionText.text = K.gameplayErrorMessage
+//        }
+//    }
+
+//    private func showRandomQuestion(questions: [String]) {
+//        if questions.count > 0 {
+//
+//            var quest = questions
+//
+//            // random key from array
+//            let arrayKey = Int(arc4random_uniform(UInt32(quest.count)))
+//
+//            // your random number
+//            let randQuestion = quest[arrayKey]
+//
+//            // make sure the number isnt repeated
+//            quest.swapAt(arrayKey, quest.count-1)
+//            quest.removeLast()
+//
+//            uiElements.questionText.text = randQuestion
+//        }
+//    }
+
+//switch uiElements.questionText.text {
+//case shuffledWarmUp.first:
+//    showAlert()
+//case shuffledFunny.first:
+//    showAlert()
+//case shuffledSexyDirty.first:
+//    showAlert()
+//case randomCategories.first:
+//    showAlert()
+//default:
+//    print("hz")
+//}
+
+//let imageView: UIImageView = {
+//    let imageView = UIImageView()
+//    imageView.translatesAutoresizingMaskIntoConstraints = false
+//    imageView.image = UIImage(named: "PlayButton")
+//    imageView.contentMode = .scaleAspectFill
+//    return imageView
+//}()
+
+//navigationItem.rightBarButtonItem = UIBarButtonItem(
+//    image: UIImage(systemName: K.SymbolNames.shareSymbol, withConfiguration: config),
+//    style: .done,
+//    target: self,
+//    action: #selector(shareButtonPressed)
+//)
+
+
+//    private func configureBarButtons() {
+//        let config = UIImage.SymbolConfiguration(pointSize: 30, weight: .heavy, scale: .default)
+//
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(
+//            image: UIImage(systemName: "slider.horizontal.3", withConfiguration: config),
+//            style: .done,
+//            target: self,
+//            action: #selector(settingButtonPressed)
+//        )
+//    }
+
+
+//extension UIView {
+//    func fadeTo(_ alpha: CGFloat, duration: TimeInterval = 1.0) {
+//    DispatchQueue.main.async {
+//      UIView.animate(withDuration: duration) {
+//        self.alpha = alpha
+//      }
+//    }
+//  }
+//
+//  func fadeIn(_ duration: TimeInterval = 0.3) {
+//    fadeTo(1.0, duration: duration)
+//  }
+//
+//  func fadeOut(_ duration: TimeInterval = 0.3) {
+//    fadeTo(0.0, duration: duration)
+//  }
+//}
+
+//@objc private func shareButtonPressed() {
+//    
+//}
+
+
+// Welcome label
+//        constraints.append(uiElements.welcomeLabel.leadingAnchor.constraint(equalTo: layout.leadingAnchor))
+//        constraints.append(uiElements.welcomeLabel.trailingAnchor.constraint(equalTo: layout.trailingAnchor))
+//        constraints.append(uiElements.welcomeLabel.centerXAnchor.constraint(equalTo: layout.centerXAnchor))
+//        constraints.append(uiElements.welcomeLabel.topAnchor.constraint(equalTo: uiElements.editButton.bottomAnchor, constant: 20))
+//        constraints.append(uiElements.welcomeLabel.topAnchor.constraint(equalTo: layout.topAnchor))
+
+// Edit Button:
+//        constraints.append(uiElements.editButton.topAnchor.constraint(equalTo: layout.topAnchor))
+//        constraints.append(uiElements.editButton.leadingAnchor.constraint(equalTo: layout.leadingAnchor))
+
+// Logo image
+//        constraints.append(uiElements.logoImage.leadingAnchor.constraint(equalTo: layout.leadingAnchor))
+//        constraints.append(uiElements.logoImage.trailingAnchor.constraint(equalTo: layout.trailingAnchor))
+//        constraints.append(uiElements.logoImage.topAnchor.constraint(equalTo: uiElements.welcomeLabel.bottomAnchor))
+//        constraints.append(uiElements.logoImage.bottomAnchor.constraint(equalTo: uiElements.playButton.topAnchor))
+
+//        view.addSubview(uiElements.welcomeLabel)
+//        view.addSubview(uiElements.editButton)
+
+//navigationItem.leftBarButtonItem = UIBarButtonItem(
+//    image: UIImage(systemName: "line.3.horizontal.circle", withConfiguration: config),
+//    style: .done,
+//    target: self,
+//    action: #selector(settingButtonPressed)
+//)
+
+
+//navigationItem.rightBarButtonItem = UIBarButtonItem(
+//    title: "Done",
+//    style: .done,
+//    target: self,
+//    action: #selector(dismissSelf)
+//)
+//navigationItem.rightBarButtonItem?.tintColor = .black
+
+
+//Tutorial2VC(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+
+
+//class ViewController2: UIViewController {
+//    
+//    private var uiElements = UIElements()
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        view.backgroundColor = K.Colours.whitePastelColor
+//        
+//        autoLayout()
+//        configureUI()
+//    }
+//    
+//    func autoLayout() {
+//        var constraints = [NSLayoutConstraint]()
+//        
+//        let layout = view.layoutMarginsGuide
+//        
+//        view.addSubview(uiElements.illustImageView)
+//        view.addSubview(uiElements.tutorialLabel)
+//        
+//        // Illustration ImageView
+//        constraints.append(uiElements.illustImageView.topAnchor.constraint(equalTo: layout.topAnchor))
+//        constraints.append(uiElements.illustImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor))
+//        constraints.append(uiElements.illustImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor))
+//        constraints.append(uiElements.illustImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor))
+//
+//        // Description Label
+//        constraints.append(uiElements.tutorialLabel.topAnchor.constraint(equalTo: uiElements.illustImageView.bottomAnchor))
+//        constraints.append(uiElements.tutorialLabel.leadingAnchor.constraint(equalTo: layout.leadingAnchor))
+//        constraints.append(uiElements.tutorialLabel.trailingAnchor.constraint(equalTo: layout.trailingAnchor))
+//        constraints.append(uiElements.tutorialLabel.bottomAnchor.constraint(equalTo: layout.bottomAnchor))
+//        
+//
+//        NSLayoutConstraint.activate(constraints)
+//        
+//    }
+//    
+//    func configureUI() {
+//        uiElements.illustImageView.image = UIImage(named: "GetYourFriend")
+//        
+//        uiElements.tutorialLabel.text = "Get your partner, friend or anyone you want."
+//    }
+//    
+//}
+//
+//class ViewController3: UIViewController {
+//    
+//    private var uiElements = UIElements()
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        view.backgroundColor = K.Colours.whitePastelColor
+//        
+//        autoLayout()
+//        configureUI()
+//    }
+//    
+//    func autoLayout() {
+//        var constraints = [NSLayoutConstraint]()
+//        
+//        let layout = view.layoutMarginsGuide
+//        
+//        view.addSubview(uiElements.illustImageView)
+//        view.addSubview(uiElements.tutorialLabel)
+//        
+//        // Illustration ImageView
+//        constraints.append(uiElements.illustImageView.topAnchor.constraint(equalTo: layout.topAnchor))
+//        constraints.append(uiElements.illustImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor))
+//        constraints.append(uiElements.illustImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor))
+//        constraints.append(uiElements.illustImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor))
+//
+//        // Description Label
+//        constraints.append(uiElements.tutorialLabel.topAnchor.constraint(equalTo: uiElements.illustImageView.bottomAnchor))
+//        constraints.append(uiElements.tutorialLabel.leadingAnchor.constraint(equalTo: layout.leadingAnchor))
+//        constraints.append(uiElements.tutorialLabel.trailingAnchor.constraint(equalTo: layout.trailingAnchor))
+//        constraints.append(uiElements.tutorialLabel.bottomAnchor.constraint(equalTo: layout.bottomAnchor))
+//
+//        NSLayoutConstraint.activate(constraints)
+//    }
+//    
+//    func configureUI() {
+//        uiElements.illustImageView.image = UIImage(named: "ChooseCategory")
+//        
+//        uiElements.tutorialLabel.text = "Choose category in the app"
+//    }
+//}
+//
+//class ViewController4: UIViewController {
+//    
+//    private var uiElements = UIElements()
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        view.backgroundColor = K.Colours.whitePastelColor
+//        
+//        autoLayout()
+//        configureUI()
+//    }
+//    
+//    func autoLayout() {
+//        var constraints = [NSLayoutConstraint]()
+//        
+//        let layout = view.layoutMarginsGuide
+//        
+//        view.addSubview(uiElements.illustImageView)
+//        view.addSubview(uiElements.tutorialLabel)
+//        
+//        // Illustration ImageView
+//        constraints.append(uiElements.illustImageView.topAnchor.constraint(equalTo: layout.topAnchor))
+//        constraints.append(uiElements.illustImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor))
+//        constraints.append(uiElements.illustImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor))
+//        constraints.append(uiElements.illustImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor))
+//
+//        // Description Label
+//        constraints.append(uiElements.tutorialLabel.topAnchor.constraint(equalTo: uiElements.illustImageView.bottomAnchor))
+//        constraints.append(uiElements.tutorialLabel.leadingAnchor.constraint(equalTo: layout.leadingAnchor))
+//        constraints.append(uiElements.tutorialLabel.trailingAnchor.constraint(equalTo: layout.trailingAnchor))
+//        constraints.append(uiElements.tutorialLabel.bottomAnchor.constraint(equalTo: layout.bottomAnchor))
+//
+//        NSLayoutConstraint.activate(constraints)
+//    }
+//    
+//    func configureUI() {
+//        uiElements.illustImageView.image = UIImage(named: "AskQuestions")
+//        
+//        uiElements.tutorialLabel.text = "Ask each other questions that appear on the screen. Have fun 😉"
+//    }
+//}
+
+//constraints.append(uiElements.tutorialLabel.topAnchor.constraint(equalTo: uiElements.illustImageView.bottomAnchor, constant: 20))
+//constraints.append(uiElements.tutorialLabel.leadingAnchor.constraint(equalTo: layout.leadingAnchor))
+//constraints.append(uiElements.tutorialLabel.trailingAnchor.constraint(equalTo: layout.trailingAnchor))
+//constraints.append(uiElements.tutorialLabel.bottomAnchor.constraint(equalTo: layout.bottomAnchor, constant: -40))
+//        constraints.append(uiElements.tutorialLabel.centerYAnchor.constraint(equalTo: uiElements.illustImageView.bottomAnchor))
+
+//let testBackgroundImage: UIImageView = {
+//    let imageView = UIImageView()
+//    imageView.translatesAutoresizingMaskIntoConstraints = false
+//    imageView.contentMode = .scaleAspectFill
+//    imageView.image = UIImage(named: "BackImage2")
+//    return imageView
+//}()
+
+
+//        constraints.append(testBackgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor))
+//        constraints.append(testBackgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor))
+//        constraints.append(testBackgroundImage.topAnchor.constraint(equalTo: view.topAnchor))
+//        constraints.append(testBackgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor))
+
+
+//switch deviceType {
+//case .iPhone4_4S:
+//    uiElements.questionText.font = UIFont(name: K.AssetsNames.visbyRound, size: UIScreen.main.bounds.height / 28)
+//case .iPhones_5_5s_5c_SE:
+//    uiElements.questionText.font = UIFont(name: K.AssetsNames.visbyRound, size: UIScreen.main.bounds.height / 28)
+//case .iPhones_6_6s_7_8:
+//    uiElements.questionText.font = UIFont(name: K.AssetsNames.visbyRound, size: UIScreen.main.bounds.height / 28)
+//case .iPhones_6Plus_6sPlus_7Plus_8Plus:
+//    uiElements.questionText.font = UIFont(name: K.AssetsNames.visbyRound, size: 28)
+//case .iPhoneX:
+//    uiElements.questionText.font = UIFont(name: K.AssetsNames.varelaRound, size: 28)
+//default:
+//    uiElements.questionText.font = UIFont.systemFont(ofSize: 28, weight: .semibold)
+//}
+//}
+
+//label.font = UIFont(name: "FredokaOne-Regular", size: 25)
+
+/// To remove:
+//uiElements.questionText.text = "You have your own late night talk show, who do you invite as your first guest?"
+
+
+//let testBackgroundImage: UIImageView = {
+//    let imageView = UIImageView()
+//    imageView.translatesAutoresizingMaskIntoConstraints = false
+//    imageView.contentMode = .scaleAspectFill
+//    imageView.image = UIImage(named: "BackgroundForScreenshot")
+//    return imageView
+//}()
+
+//constraints.append(testBackgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor))
+//constraints.append(testBackgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor))
+//constraints.append(testBackgroundImage.topAnchor.constraint(equalTo: view.topAnchor))
+//constraints.append(testBackgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor))
+
+//        view.addSubview(testBackgroundImage)
+
+//func configureUIForSpecificDevice(_ imageView: UIImageView) {
+//    let deviceType = UIDevice.current.deviceType
+//    
+//    switch deviceType {
+//    case .iPhones_5_5s_5c_SE:
+//        imageView.image = UIImage(named: K.AssetsNames.haveFunImage)
+//    case .iPhones_6_6s_7_8:
+//        imageView.image = UIImage(named: K.AssetsNames.haveFunImage)
+//    case .iPhones_6Plus_6sPlus_7Plus_8Plus:
+//        imageView.image = UIImage(named: K.AssetsNames.askQuestionsImage)
+//    case .iPhoneX:
+//        imageView.image = UIImage(named: K.AssetsNames.askQuestionsImage)
+//    default:
+//        imageView.image = UIImage(named: K.AssetsNames.askQuestionsImage)
+//    }
+//}

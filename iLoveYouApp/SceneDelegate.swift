@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let winScene = (scene as? UIWindowScene) else { return }
         
-        let navController = UINavigationController(rootViewController: WelcomeScreenVC())
+        let navController = UINavigationController(rootViewController: CategoryVC())
 
         UINavigationBar.appearance().tintColor = .white
         

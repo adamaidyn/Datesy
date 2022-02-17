@@ -22,7 +22,7 @@ class CategoryCell: UITableViewCell {
     private let goImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: K.AssetsNames.goButton)
+        imageView.image = UIImage(named: K.AssetsNames.goButtonPurple)
         imageView.contentMode = .scaleToFill
         return imageView
     }()
@@ -30,8 +30,8 @@ class CategoryCell: UITableViewCell {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: K.AssetsNames.visbyRound, size: 25)
-        label.textColor = K.Colours.pinkColor
+        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+        label.textColor = K.Colours.specialPurple
         label.numberOfLines = 0
         return label
     }()
