@@ -11,7 +11,7 @@ struct Questions {
     
     // MARK: - Questions by category
     
-    let categories = ["Warm up", "Funny", "Sexy & dirty", "Random"]
+    let categories = ["Warm up", "Funny", "Sexy & Dirty", "Random"]
     
     let funny = ["The zombie apocalypse is coming, who are 3 people you want on your team?",
                  "Who was your childhood crush?",

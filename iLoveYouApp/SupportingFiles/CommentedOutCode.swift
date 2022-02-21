@@ -580,3 +580,24 @@
 //        imageView.image = UIImage(named: K.AssetsNames.askQuestionsImage)
 //    }
 //}
+
+
+//            menu.setTargetRect(bounds, in: self)
+//            menu.setMenuVisible(true, animated: true)
+
+//        menu.setMenuVisible(false, animated: true)
+
+//print(UIScreen.main.bounds.height / 47)
+
+//    var questionText: UILabel = {
+//
+//        let label = UILabel()
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//        label.textAlignment = .center
+//        label.font = UIFont(name: K.AssetsNames.varelaRound, size: 28)
+//        label.textColor = K.Colours.pureBlack
+//        label.numberOfLines = 0
+//        label.isUserInteractionEnabled = true
+//        return label
+//    }()
+    

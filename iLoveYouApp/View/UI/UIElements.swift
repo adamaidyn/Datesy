@@ -120,16 +120,17 @@ struct UIElements {
         return button
     }()
     
-    var questionText: UILabel = {
-        let label = UILabel()
+    var questionText: CopyableLabel = {
+
+        let label = CopyableLabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.font = UIFont(name: K.AssetsNames.varelaRound, size: 28)
         label.textColor = K.Colours.pureBlack
         label.numberOfLines = 0
+        label.isUserInteractionEnabled = true
         return label
     }()
-    
     
     // MARK: - Settings Screen UI
     
@@ -183,6 +184,11 @@ extension UIDevice {
         case iPhones_6_6s_7_8 = "iPhone 6, iPhone 6S, iPhone 7 or iPhone 8"
         case iPhones_6Plus_6sPlus_7Plus_8Plus = "iPhone 6 Plus, iPhone 6S Plus, iPhone 7 Plus or iPhone 8 Plus"
         case iPhoneX = "iPhone X"
+        case iPhoneXR_11 = "iPhone XR or iPhone 11"
+        case iPhoneXSMax_11ProMax = "iPhone XS Max or iPhone 11 Pro Max"
+        case iPhone12Mini_13Mini = "iPhone 12 Mini or iPhone 13 Mini"
+        case iPhone12_12Pro_13_13Pro = "iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro"
+        case iPhone12ProMax_iPhone13ProMax = "iPhone 12 Pro Max or iPhone 13 Pro Max"
         case unknown = "iPadOrUnknown"
     }
     
@@ -198,6 +204,16 @@ extension UIDevice {
             return .iPhones_6Plus_6sPlus_7Plus_8Plus
         case 2436:
             return .iPhoneX
+        case 1792:
+            return .iPhoneXR_11
+        case 2340:
+            return .iPhone12Mini_13Mini
+        case 2532:
+            return .iPhone12_12Pro_13_13Pro
+        case 2688:
+            return .iPhoneXSMax_11ProMax
+        case 2778:
+            return .iPhone12ProMax_iPhone13ProMax
         default:
             return .unknown
         }

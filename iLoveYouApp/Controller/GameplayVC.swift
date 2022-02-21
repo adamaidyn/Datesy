@@ -4,6 +4,8 @@
 //
 //  Created by Adm Aidyn on 10/26/21.
 //
+//  Credits to Sergey Kargopolov for CopyableLabel
+//
 
 import UIKit
 import Pastel
@@ -13,8 +15,6 @@ class GameplayVC: UIViewController {
     // MARK: - Objects and properties
     private var uiElements = UIElements()
     private var questions = Questions()
-    
-    var currentCategory: String = ""
     
     private var counter = 0
     
@@ -45,6 +45,8 @@ class GameplayVC: UIViewController {
         
         return view
     }()
+    
+    var currentCategory: String = ""
     
     let generator = UIImpactFeedbackGenerator(style: .medium)
     let generators = UINotificationFeedbackGenerator()
@@ -81,6 +83,9 @@ class GameplayVC: UIViewController {
         showQuestions()
         
         print(randomCategories.count)
+        
+        let guestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(labelClicked))
+        uiElements.questionText.addGestureRecognizer(guestureRecognizer)
     }
     
     // MARK: - Bar Buttons
@@ -98,6 +103,10 @@ class GameplayVC: UIViewController {
             
         }
         generator.impactOccurred()
+    }
+    
+    @objc private func labelClicked() {
+        print("label clicked")
     }
     
     // MARK: - Display info methods
@@ -162,8 +171,8 @@ extension GameplayVC {
         // Question text
         constraints.append(uiElements.questionText.centerXAnchor.constraint(equalTo: questionViewLayout.centerXAnchor))
         constraints.append(uiElements.questionText.centerYAnchor.constraint(equalTo: questionViewLayout.centerYAnchor))
-        constraints.append(uiElements.questionText.topAnchor.constraint(equalTo: questionViewLayout.topAnchor))
-        constraints.append(uiElements.questionText.bottomAnchor.constraint(equalTo: questionViewLayout.bottomAnchor))
+//        constraints.append(uiElements.questionText.topAnchor.constraint(equalTo: questionViewLayout.topAnchor))
+//        constraints.append(uiElements.questionText.bottomAnchor.constraint(equalTo: questionViewLayout.bottomAnchor))
         constraints.append(uiElements.questionText.leadingAnchor.constraint(equalTo: questionViewLayout.leadingAnchor))
         constraints.append(uiElements.questionText.trailingAnchor.constraint(equalTo: questionViewLayout.trailingAnchor))
         
@@ -236,5 +245,52 @@ extension GameplayVC {
         counter += 1
         
         return randomQuestion
+    }
+}
+
+// MARK: - CopyableLabel class
+class CopyableLabel: UILabel {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.sharedInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.sharedInit()
+    }
+    
+    func sharedInit() {
+        self.isUserInteractionEnabled = true
+        self.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(self.showMenu)))
+    }
+    
+    @objc func showMenu(sender: AnyObject?) {
+        self.becomeFirstResponder()
+        
+        let menu = UIMenuController.shared
+        
+        if !menu.isMenuVisible {
+            menu.showMenu(from: self, rect: bounds)
+        }
+    }
+    
+    override func copy(_ sender: Any?) {
+        let board = UIPasteboard.general
+        
+        board.string = text
+        
+        let menu = UIMenuController.shared
+        
+        menu.hideMenu()
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+    
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return action == #selector(UIResponderStandardEditActions.copy)
     }
 }

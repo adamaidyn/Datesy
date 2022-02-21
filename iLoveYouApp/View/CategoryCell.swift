@@ -15,7 +15,7 @@ class CategoryCell: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = K.Colours.whitePastelColor
         view.clipsToBounds = true
-        view.layer.cornerRadius = 22
+        view.layer.cornerRadius = UIScreen.main.bounds.width / 20
         return view
     }()
     
@@ -42,7 +42,6 @@ class CategoryCell: UITableViewCell {
         label.sizeToFit()
         label.textColor = .black
         label.numberOfLines = 0
-        label.font = label.font.withSize(17)
         return label
     }()
     
@@ -51,7 +50,7 @@ class CategoryCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setConstraints()
-        configureDiscriptionLabel()
+        configureDiscriptionLabel(descriptionLabel)
     }
     
     required init?(coder: NSCoder) {
@@ -60,7 +59,6 @@ class CategoryCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
     }
     
     // MARK: - Constraints
@@ -83,16 +81,17 @@ class CategoryCell: UITableViewCell {
         constraints.append(backView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5))
         
         // Title:
-        constraints.append(titleLabel.leadingAnchor.constraint(equalTo: backViewLayout.leadingAnchor, constant: 5))
+        constraints.append(titleLabel.leadingAnchor.constraint(equalTo: backViewLayout.leadingAnchor))
         constraints.append(titleLabel.topAnchor.constraint(equalTo: backViewLayout.topAnchor))
         
         // Description
-        constraints.append(descriptionLabel.leadingAnchor.constraint(equalTo: backViewLayout.leadingAnchor, constant: 5))
+        constraints.append(descriptionLabel.leadingAnchor.constraint(equalTo: backViewLayout.leadingAnchor))
         constraints.append(descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100))
-        constraints.append(descriptionLabel.topAnchor.constraint(equalTo: backViewLayout.topAnchor, constant: 35))
+//        constraints.append(descriptionLabel.topAnchor.constraint(equalTo: backViewLayout.topAnchor, constant: 35))
+        constraints.append(descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor))
         
         // "GO" Image
-        constraints.append(goImage.trailingAnchor.constraint(equalTo: layout.trailingAnchor, constant: -5))
+        constraints.append(goImage.trailingAnchor.constraint(equalTo: layout.trailingAnchor))
         constraints.append(goImage.centerYAnchor.constraint(equalTo: centerYAnchor))
         
         NSLayoutConstraint.activate(constraints)
@@ -100,28 +99,31 @@ class CategoryCell: UITableViewCell {
     
     // MARK: - Elements config
     
-    func configureDiscriptionLabel() {
+    func configureDiscriptionLabel(_ label: UILabel) {
         let deviceType = UIDevice.current.deviceType
-        
         switch deviceType {
-        
         case .iPhone4_4S:
-            descriptionLabel.font = UIFont.systemFont(ofSize: 12)
-            
+            label.font = UIFont.systemFont(ofSize: 12)
         case .iPhones_5_5s_5c_SE:
-            descriptionLabel.font = UIFont.systemFont(ofSize: 14)
-            
+            label.font = UIFont.systemFont(ofSize: 14)
         case .iPhones_6_6s_7_8:
-            descriptionLabel.font = UIFont.systemFont(ofSize: 17)
-            
+            label.font = UIFont.systemFont(ofSize: 15.5)
         case .iPhones_6Plus_6sPlus_7Plus_8Plus:
-            descriptionLabel.font = UIFont.systemFont(ofSize: 17)
-            
+            label.font = UIFont.systemFont(ofSize: 19)
         case .iPhoneX:
-            descriptionLabel.font = UIFont.systemFont(ofSize: 17)
-            
+            label.font = UIFont.systemFont(ofSize: 16)
+        case .iPhoneXR_11:
+            label.font = UIFont.systemFont(ofSize: 16)
+        case .iPhone12Mini_13Mini:
+            label.font = UIFont.systemFont(ofSize: 15.5)
+        case .iPhone12_12Pro_13_13Pro:
+            label.font = UIFont.systemFont(ofSize: 16)
+        case .iPhoneXSMax_11ProMax:
+            label.font = UIFont.systemFont(ofSize: 19)
+        case .iPhone12ProMax_iPhone13ProMax:
+            label.font = UIFont.systemFont(ofSize: 19)
         default:
-            descriptionLabel.font = UIFont.systemFont(ofSize: 17)
+            label.font = UIFont.systemFont(ofSize: 19)
         }
     }
 }

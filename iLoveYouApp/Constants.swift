@@ -15,7 +15,7 @@ struct K {
     ]
     
     static let cellName = "categoryCell"
-    static let categoryScreenTitle = "Choose Category"
+    static let categoryScreenTitle = "Categories"
     static let gameplayErrorMessage = "Error occured while fetching the question"
     static let invalidTextMessage = "Invalid text"
     static let invalidSectionMessage = "Invalid section"
