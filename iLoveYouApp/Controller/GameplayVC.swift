@@ -135,7 +135,6 @@ class GameplayVC: UIViewController {
         
         Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)})
     }
-    
 }
 // MARK: - Extensions
 

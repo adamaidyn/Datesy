@@ -173,6 +173,5 @@ extension CategoryVC {
             target: self,
             action: #selector(tutorialScreen)
         )
-        
     }
 }

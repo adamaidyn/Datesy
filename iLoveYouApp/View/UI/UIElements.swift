@@ -13,7 +13,6 @@ struct UIElements {
     let backgroundImageview: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-//        imageView.image = UIImage(named: K.AssetsNames.pinkBackground)
         imageView.image = UIImage(named: "PurpleBackground")
         imageView.contentMode = .scaleAspectFill
         imageView.accessibilityLabel = "App logo"
@@ -78,7 +77,6 @@ struct UIElements {
         return tableView
     }()
     
-    
     // MARK: - Gameplay elements
     let questionWindow: UIView = {
         let view = UIView()
@@ -104,8 +102,6 @@ struct UIElements {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(largeBoldDoc, for: .normal)
         button.tintColor = .white
-        
-//        button.backgroundColor = K.Colours.pureBlack
         button.layer.cornerRadius = UIScreen.main.bounds.height / 16.5
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
@@ -116,7 +112,6 @@ struct UIElements {
         if #available(iOS 13, *) {
             button.setImage(UIImage(systemName: "arrow.right.circle", withConfiguration: justConfig), for: .normal)
         }
-        
         return button
     }()
     
@@ -125,7 +120,6 @@ struct UIElements {
         let label = CopyableLabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.font = UIFont(name: K.AssetsNames.varelaRound, size: 28)
         label.textColor = K.Colours.pureBlack
         label.numberOfLines = 0
         label.isUserInteractionEnabled = true
@@ -146,9 +140,7 @@ struct UIElements {
         return label
     }()
     
-    
     // MARK: - Tutorial Screen UI
-    
     let illustImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false

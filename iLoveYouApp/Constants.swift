@@ -23,10 +23,10 @@ struct K {
     static let emptyString = ""
     static let skipButtonTitle = "Skip"
     static let doneButtonTitle = "Done"
-    static let tutorialWelcomeMessage = "Welcome to Datesy. Here’s how to use it"
+    static let tutorialWelcomeMessage = "Welcome to Datesy. \n Here’s how to use it."
     static let getYourPartnerMessage = "Get your partner, friend or anyone you want."
     static let chooseCatMessage = "Choose category in the app"
-    static let directionsMessage = "Ask each other questions that appear on the screen. Have fun 😉"
+    static let directionsMessage = "Ask each other questions that appear on the screen. \n Have fun 😉"
     struct AssetsNames {
         static let visbyRound = "VisbyRoundCF-Bold"
         static let varelaRound = "VarelaRound-Regular"
