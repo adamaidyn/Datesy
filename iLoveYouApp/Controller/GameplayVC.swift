@@ -91,6 +91,7 @@ class GameplayVC: UIViewController {
     // MARK: - Bar Buttons
     @objc private func dismissSelf() {
         dismiss(animated: true, completion: nil)
+        generator.impactOccurred(intensity: 0.7)
     }
     
     // MARK: - Buttons
